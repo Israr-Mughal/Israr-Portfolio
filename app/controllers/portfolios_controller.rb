@@ -20,13 +20,11 @@ class PortfoliosController < ApplicationController
         @portfolio_item = Portfolio.new(portfolio_params)
 
         respond_to do |format|
-        if @portfolio_item.save
-            format.html { redirect_to @portfolio_item, notice: 'Portfolio was successfully created.' }
-            format.json { render :show, status: :created, location: @portfolio_item }
-        else
-            format.html { render :new }
-            format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
-        end
+            if @portfolio_item.save
+                format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
+            else
+                format.html { render :new }
+            end
         end
     end
 
