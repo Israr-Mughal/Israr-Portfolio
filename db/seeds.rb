@@ -39,3 +39,10 @@ end
         thumb_image: "http://via.placeholder.com/100"
     )
 end
+
+3.times do |technology|
+    
+    Portfolio.first.technologies.create!(
+        name: "Technology name is #{technology}"
+    )
+end
