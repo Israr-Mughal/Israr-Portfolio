@@ -7,7 +7,6 @@ module SetSource
  
     def set_source
       session[:source] = params[:q] if params[:q].present?
-      puts "under session f/n #{params[:q]} \n" * 3
     end
 
 end
