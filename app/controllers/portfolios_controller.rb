@@ -1,4 +1,7 @@
 class PortfoliosController < ApplicationController
+      before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
+ 
+    layout "portfolio"
 
     def index
         @portfolio_items = Portfolio.all
@@ -30,13 +33,11 @@ class PortfoliosController < ApplicationController
     end
 
     def edit 
-     p  @portfolio_item = Portfolio.find(params[:id])
     end
 
     # PATCH/PUT /blogs/1
     # PATCH/PUT /blogs/1.json
     def update
-       p  @portfolio_item = Portfolio.find(params[:id])
         respond_to do |format|
             if @portfolio_item.update(portfolio_params)
                 format.html { redirect_to @portfolio_item, notice: 'Portfolio Item was successfully updated.' }
@@ -49,14 +50,12 @@ class PortfoliosController < ApplicationController
     end
 
     def show 
-        p  @portfolio_item = Portfolio.find(params[:id])
     end
 
 
   # DELETE /Portfolio/1
   # DELETE /Portfolio/1.json
   def destroy
-       p  @portfolio_item = Portfolio.find(params[:id])
 
     @portfolio_item.destroy
     respond_to do |format|
@@ -65,7 +64,10 @@ class PortfoliosController < ApplicationController
   end
 
   private
-  
+    def set_portfolio_item
+        @portfolio_item = Portfolio.find(params[:id])
+    end
+
     # Only allow a list of trusted parameters through.
     def portfolio_params
       params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
