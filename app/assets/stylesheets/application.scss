@@ -162,8 +162,19 @@ body {
 .card-block {
   color: black;
   text-align: left;
-  padding: 2%;
+  padding: 3%;
 }
 .auth-links a {
   color: black;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+
+.login > .card > .card-block .auth-links {
+  margin-top: 10px;
 }
