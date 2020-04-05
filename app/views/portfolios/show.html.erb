@@ -1,32 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<%= image_tag @portfolio_item.main_image if !@portfolio_item.thumb_image.nil? %> 
-
-<p>
-  <strong>Title:</strong>
-  <%= @portfolio_item.title %>
-</p>
-
-<em>
-  <strong>Subtitle:</strong>
-  <%= @portfolio_item.subtitle %>
-</em>
-
-<p>
-  <strong>Body:</strong>
-  <%= @portfolio_item.body %>
-</p>
-
-<p>
-  <strong>Main Image:</strong>
-  <%= @portfolio_item.thumb_image %>
-</p>
-
-<h3>Technologies List </h3>
-<% @portfolio_item.technologies.each do |t| %>
-  <p> <%= t.name%> </p>
-<%end%>
 
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)  %> 
-<%= link_to 'Back', portfolios_path  %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7" class="center">
+      <%= image_tag @portfolio_item.main_image if !@portfolio_item.thumb_image.nil? %> 
+      <p>
+        <span> <%= link_to 'Edit', edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)  %> </span> /
+        <span> <%= link_to 'Back', portfolios_path  %> </span>
+      </p>
+    </div>
+     <div class="col-md-5">
+         <h1><%= @portfolio_item.title %></h1>
+        <hr>
+          <em> <%= @portfolio_item.subtitle %></em>
+          
+          <p> <%= @portfolio_item.body %> </p>
+            
+        <hr>
+    
+          <h3>Technologies List </h3>
+          <% @portfolio_item.technologies.each do |t| %>
+            <p> <%= t.name%> </p>
+          <%end%>
+    </div>  
+  </div>
+</div>
+
