@@ -12,6 +12,10 @@ class Portfolio < ApplicationRecord
         where(subtitle: "AngulerJS")
     end
 
+    def self.by_position
+        order(position: :asc)
+    end
+
     scope :rubyonrails, -> {where(subtitle: "Ruby On Rails")}
 
     # set default values
