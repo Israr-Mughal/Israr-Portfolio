@@ -1,84 +1,67 @@
+@import "bootstrap";
+@import "jquery-ui";
+
 body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
   background-color: #fff;
-  color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+.jumbotron p:last-child {
+  margin-bottom: 0;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+.jumbotron-heading {
+  font-weight: 300;
 }
 
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+.jumbotron .container {
+  max-width: 40rem;
 }
 
-th {
-  padding-bottom: 5px;
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
 }
 
-td {
-  padding: 0 5px 7px;
+.card {
+  float: left;
+  width: 33.333%;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  border: 0;
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
+.card > img {
+  margin-bottom: 0.75rem;
 }
 
-#notice {
-  color: green;
+.card-text {
+  font-size: 85%;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
-  }
-
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+footer p {
+  margin-bottom: 0.25rem;
 }
 
-label {
-  display: block;
+/* Custom styles */
+
+.portfolio-container {
+  padding-top: 30px;
 }

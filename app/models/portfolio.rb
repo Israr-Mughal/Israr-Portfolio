@@ -4,10 +4,12 @@ class Portfolio < ApplicationRecord
                                     reject_if: lambda {|attr| attr['name'].blank?}
 
     include Placeholder
-    validates_presence_of :title, :body, :main_image, :thumb_image
+    validates_presence_of :title, :body
+    
+    mount_uploader :thumb_image, PortfolioUploader
+    mount_uploader :main_image, PortfolioUploader
 
     # custome scope
-
     def self.anguler
         where(subtitle: "AngulerJS")
     end
@@ -17,13 +19,5 @@ class Portfolio < ApplicationRecord
     end
 
     scope :rubyonrails, -> {where(subtitle: "Ruby On Rails")}
-
-    # set default values
-    after_initialize :set_defaults
-
-    def set_defaults
-        self.main_image ||= Placeholder.image_generator(150,150)
-        self.thumb_image ||= Placeholder.image_generator(150,150)
-    end
 
 end
