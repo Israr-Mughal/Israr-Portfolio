@@ -15,4 +15,13 @@ module ApplicationHelper
             content_tag(:p ,  greeting, class:"source-greeting")
         end
     end
+    
+    def alerts
+        alert = (flash[:alert] || flash[:error] || flash[:notice])
+        alert_generator alert
+    end
+    
+    def alert_generator msg
+         js add_gritter(msg, :title => "Please pay attention!", sticky: false ) if msg
+    end
 end
