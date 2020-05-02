@@ -2,6 +2,8 @@
     Topic.create!(
         title: "Topic Post Number is #{topic}"
     )
+    puts " Topic "
+
 end
 
 10.times do |blogs|
@@ -11,6 +13,8 @@ end
         topic_id: Topic.last.id
 
         )
+    puts " blog "
+
 end
 
 5.times do |skills|
@@ -18,6 +22,8 @@ end
         title: "Rails Number is #{skills}",
         percent_utilized: 10+(skills).to_i
     )
+    puts " skills "
+    
 end
 
 5.times do |portfolios|
@@ -28,6 +34,8 @@ end
         main_image: "http://via.placeholder.com/300",
         thumb_image: "http://via.placeholder.com/100"
     )
+    puts " Portfolio "
+
 end
 
 3.times do |portfolios|
@@ -38,6 +46,7 @@ end
         main_image: "http://via.placeholder.com/300",
         thumb_image: "http://via.placeholder.com/100"
     )
+    puts " Portfolio "
 end
 
 3.times do |technology|
@@ -45,4 +54,5 @@ end
     Portfolio.first.technologies.create!(
         name: "Technology name is #{technology}"
     )
+    puts " Portfolio technology"
 end

@@ -1,21 +1,15 @@
 module PortfoliosHelper
+  def image_generator(height:, width:)
+    "http://placehold.it/#{height}x#{width}"
+  end
 
-    # extend ActiveSupport::Concern
-    def image_generator(height, width)
-        "http://via.placeholder.com/#{width}"
+  def portfolio_img img, type
+    if img.model.main_image? || img.model.thumb_image?
+      img
+    elsif type == 'thumb'
+      image_generator(height: '300', width: '200')
+    elsif type == 'main'
+      image_generator(height: '600', width: '400')
     end
-
-    def protfolio_img img, type
-        if img
-        elsif type == 'thumb'
-            image_generator(height: '350', height: '200')
-        else
-            image_generator(height: '600', height: '400')
-        end
-    end
-
-    self.main_image ||= Placeholder.image_generator(150,150)
-    self.thumb_image ||= Placeholder.image_generator(150,150)
-
-
+  end
 end
